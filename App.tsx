@@ -1,20 +1,86 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+
+import { NativeRouter, Route, Link, Routes } from "react-router-native";
+
+import Home from './screens/Home'
+import About from './screens/About'
+
+
+interface Props {
+  
+}
+
+// const Home = (props: Props) => {
+//   return(
+//     <View>
+//     <Text>Home</Text>
+//   </View>
+//   )
+
+// }
+// const About = (props: Props) => {
+//   return(
+//   <View>
+//     <Text>About</Text>
+//   </View>
+//   )
+// }
+
+const App = (props: Props) => {
   return (
+    <NativeRouter>
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.nav}>
+        <Link to="/" underlayColor="#f0f4f7" style={styles.navItem}>
+          <Text>Home</Text>
+        </Link>
+        <Link
+          to="/about"
+          underlayColor="#f0f4f7"
+          style={styles.navItem}
+        >
+          <Text>About</Text>
+        </Link>
+      </View>
+    <Routes>
+    <Route exact path="/" element={<Home/>} />
+      <Route path="/about" element={<About/>} />
+    </Routes>
+
+      {/* <Route path="/topics" component={Topics} /> */}
     </View>
-  );
+  </NativeRouter>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 25,
+    padding: 10
   },
+  header: {
+    fontSize: 20
+  },
+  nav: {
+    flexDirection: "row",
+    justifyContent: "space-around"
+  },
+  navItem: {
+    flex: 1,
+    alignItems: "center",
+    padding: 10
+  },
+  subNavItem: {
+    padding: 5
+  },
+  topic: {
+    textAlign: "center",
+    fontSize: 15
+  }
 });
+
+export default App
+
+
