@@ -5,12 +5,12 @@ interface Props {
     
 }
 
-const About = (props: Props) => {
+const Categories = (props: Props) => {
     return (
         <View>
-            <Text>About</Text>
+            <Text>Categories Page</Text>
         </View>
     )
 }
 
-export default About
+export default Categories

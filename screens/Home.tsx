@@ -1,5 +1,8 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, } from 'react-native'
+
+import { Button, Heading, Text } from "native-base";
+import { NativeRouter, Route, Link, Routes, useParams } from "react-router-native";
 
 interface Props {
     
@@ -8,7 +11,14 @@ interface Props {
 const Home = (props: Props) => {
     return (
         <View>
-            <Text>Home1</Text>
+            <Heading>
+                Welcome to Home
+            </Heading>
+            <Text>
+                Check out our categories page
+            </Text>
+
+
         </View>
     )
 }
