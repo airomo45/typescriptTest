@@ -8,7 +8,7 @@ interface Props {
 const Home = (props: Props) => {
     return (
         <View>
-            <Text>Home</Text>
+            <Text>Home1</Text>
         </View>
     )
 }
