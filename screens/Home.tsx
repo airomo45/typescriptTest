@@ -9,6 +9,8 @@ interface Props {
 }
 
 const Home = (props: Props) => {
+    
+    
     return (
         <View>
             <Heading>
@@ -17,7 +19,13 @@ const Home = (props: Props) => {
             <Text>
                 Check out our categories page
             </Text>
+            <Button  variant="link" colorScheme="secondary">
+            <Link  to="/categories" onPress={() => props.setSelected(1)} >
+                <Text style={{color: 'blue'}}>Show More</Text>
+                </Link>
 
+                
+                </Button>
 
         </View>
     )

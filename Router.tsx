@@ -30,13 +30,13 @@ const Router = (props: Props) => {
 
         <Center flex={1}>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home setSelected={setSelected} />} />
             <Route path="/categories" element={<Categories />} />
           </Routes>
         </Center>
 
         <HStack bg="primary.700" alignItems="center" safeAreaBottom shadow={6}>
-          <Link to="/" underlayColor="#f0f4f7" style={styles.navItem} onPress={() => setSelected(0)}>
+          <Link to="/" style={styles.navItem} onPress={() => setSelected(0)}>
 
 
                 <View >
@@ -52,7 +52,7 @@ const Router = (props: Props) => {
 
               </Link>
      
-            <Link to="/categories" underlayColor="#f0f4f7" style={styles.navItem} onPress={() => setSelected(1)}  >
+            <Link to="/categories"  style={styles.navItem} onPress={() => setSelected(1)}  >
 
 
 
